@@ -1,0 +1,5 @@
+rd_enabled = true
+fleet_id = "c9254ad0-9806-4cef-8c61-2821836e4913"
+
+[build]
+sccache = "/home/varun/.cargo/bin/sccache"

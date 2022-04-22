@@ -32,5 +32,8 @@ jobs:
       - name: Install sccache
         run: cargo install sccache
 
+      - name: Run app using fleet
+        run: fleet run
+
       - name: Run tests
         run: cargo test --verbose
