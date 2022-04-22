@@ -38,12 +38,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install sccache
-        continue-on-error: true
+      - name: Install sccache        
         run: cargo install sccache
 
       - name: Install fleet
-        run: cargo install --upgrade cargo-fleet
+        run: cargo install cargo-fleet
 
       - name: Run app using fleet
         run: fleet run
