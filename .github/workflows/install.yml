@@ -26,11 +26,11 @@ jobs:
       - name: Rust Cache
         uses: Swatinem/rust-cache@v1.3.0
 
-      - name: Install fleet
-        run: cargo install cargo-fleet
-
       - name: Install sccache
         run: cargo install sccache
+
+      - name: Install fleet
+        run: cargo install cargo-fleet
 
       - name: Run app using fleet
         run: fleet run
