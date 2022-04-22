@@ -30,7 +30,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.cargo/registry
+          path: ~/.cargo/bin
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/cargo.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -51,7 +51,7 @@ jobs:
             ${{ runner.os }}-
             
       - name: Install sccache        
-        run: brew install sccache
+        run: cargo install sccache
         
         
       - name: Install zld
