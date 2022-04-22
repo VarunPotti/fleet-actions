@@ -39,12 +39,14 @@ jobs:
             ${{ runner.os }}-
             
       - name: Install sccache        
-        run: if [ -e ~/.cargo/bin/sccache ] ; then echo "Sccache is already installed"; else cargo install sccache; fi
+        run: brew install sccache
+        
+        
       - name: Install zld
         run: brew install michaeleisel/zld/zld
         
       - name: Install fleet
-        run: brew install sccache
+        run: cargo install fleet-rs
 
       - name: Run app using fleet
         run: fleet run
