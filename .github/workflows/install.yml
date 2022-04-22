@@ -21,12 +21,16 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: nightly
 
       - name: Rust Cache
         uses: Swatinem/rust-cache@v1.3.0
 
-      - name: Build
-        run: cargo build --verbose
+      - name: Install fleet
+        run: cargo install cargo-fleet
+
+      - name: Install sccache
+        run: cargo install sccache
+
       - name: Run tests
         run: cargo test --verbose
