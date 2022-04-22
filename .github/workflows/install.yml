@@ -20,8 +20,9 @@ jobs:
       # before the plugin, as it uses the current rustc version as its cache key
       - uses: actions-rs/toolchain@v1
         with:
-          profile: minimal
           toolchain: nightly
+          components: clippy
+          override: true
 
       - name: Rust Cache
         uses: Swatinem/rust-cache@v1.3.0
