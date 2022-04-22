@@ -42,7 +42,7 @@ jobs:
         run: if [ -e ~/.cargo/bin/sccache ] ; then echo "Sccache is already installed"; else cargo install sccache; fi
 
       - name: Install fleet
-        run: cargo install cargo-fleet
+        run: if [ -e ~/.cargo/bin/fleet ] ; then echo "Fleet is already installed"; else cargo install fleet-rs; fi
 
       - name: Run app using fleet
         run: fleet run
