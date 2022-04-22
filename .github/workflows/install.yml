@@ -41,10 +41,7 @@ jobs:
         run: cargo install sccache
 
       - name: Install fleet
-        run: cargo install cargo-fleet
+        run: cargo install --upgrade cargo-fleet
 
       - name: Run app using fleet
         run: fleet run
-
-      - name: Run tests
-        run: cargo test --verbose
