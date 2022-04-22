@@ -41,7 +41,7 @@ jobs:
       - name: Install sccache        
         run: if [ -e ~/.cargo/bin/sccache ] ; then echo "Sccache is already installed"; else cargo install sccache; fi
       - name: Install zld
-        run: brew install zld
+        run: brew install michaeleisel/zld/zld
         
       - name: Install fleet
         run: if [ -e ~/.cargo/bin/fleet ] ; then echo "Fleet is already installed"; else cargo install fleet-rs; fi
