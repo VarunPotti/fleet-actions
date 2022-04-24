@@ -11,7 +11,7 @@ linker = '/usr/bin/clang'
 rustflags = ['-Zshare-generics=y']
 linker = 'rust-lld.exe'
 
-[target."target.x86_64-apple-darwin"]
+[target.target.x86_64-apple-darwin]
 rustflags = [
     '-C',
     'link-arg=-fuse-ld=/usr/local/bin/zld',
