@@ -1,4 +1,4 @@
-rd_enabled = true
+rd_enabled = false
 fleet_id = "c9254ad0-9806-4cef-8c61-2821836e4913"
 
 [build]
