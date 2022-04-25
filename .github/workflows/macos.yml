@@ -51,14 +51,14 @@ jobs:
             ${{ runner.os }}-
             
       - name: Install sccache        
-        run: cargo install sccache
+        run:  if [ -e ~/.cargo/bin/sccache ] ; then echo "Sccache is already installed"; else cargo install sccache -f; fi
         
         
       - name: Install zld
-        run: brew install michaeleisel/zld/zld
+        run: if [ -e /usr/local/bin/zld ]; then brew link zld; else brew install michaeleisel/zld/zld
         
       - name: Install fleet
-        run: cargo install --git https://github.com/VarunPotti/fleet fleet-rs
+        run: cargo install --git https://github.com/dimensionhq/fleet fleet-rs --force
 
       - name: Run app using fleet
-        run: fleet run
+        run: fleet run --bin fleet
